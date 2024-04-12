@@ -1,0 +1,5 @@
+import './root.js'
+import './text.js'
+import './strong.js'
+import './emphasis.js'
+import './delete.js'

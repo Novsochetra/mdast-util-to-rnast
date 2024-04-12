@@ -1,0 +1,42 @@
+{
+  "type": "module",
+  "dependencies": {
+    "hast-util-to-html": "^9.0.1",
+    "mdast-util-from-markdown": "^2.0.0",
+    "mdast-util-gfm-strikethrough": "^2.0.0",
+    "mdast-util-to-hast": "^13.1.0",
+    "micromark-extension-gfm-strikethrough": "^2.0.0",
+    "unist-util-position": "^5.0.0",
+    "unist-util-visit": "^5.0.0"
+  },
+  "name": "mdast-util-to-rnast",
+  "version": "0.0.1-beta",
+  "description": "mdast utility to transform to rnast",
+  "main": "index.js",
+  "repository": "https://github.com/Novsochetra/mdast-util-to-rnast.git",
+  "author": "Novsochetra <sochetra12.nov@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "mdast",
+    "mdast-util",
+    "rnast",
+    "rnast-util",
+    "util",
+    "utility",
+    "markdown",
+    "react-native"
+  ],
+  "bugs": "https://github.com/Novsochetra/mdast-util-to-rnast/issues",
+  "prettier": {
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "scripts": {
+    "test": "node --conditions development test/index.js"
+  }
+}
