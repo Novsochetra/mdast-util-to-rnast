@@ -4,7 +4,10 @@ import {
   strong,
   heading,
   emphasis,
-  strikethrough
+  strikethrough,
+  link,
+  breakLine,
+  blockquote
 } from './elements/index.js'
 
 export function toRNast(mdast) {
@@ -26,18 +29,18 @@ function convertToRNNode(node) {
 }
 
 // TODO: handle support for basic markdown syntax:
-// 1. blockquote
-// 2. break
+// 1. blockquote (✅)
+// 2. break (✅)
 // 3. code
 // 4. delete (✅)
 // 5. emphasis (✅)
 // 6. footnote-reference
-// 7. heading
+// 7. heading (✅)
 // 8. image-reference
 // 9. image
 // 10. inline-code
 // 11. link-reference
-// 12. link
+// 12. link (✅)
 // 13. list
 // 14. paragraph (✅)
 // 15. root (✅)
@@ -49,7 +52,7 @@ function convertToRNNode(node) {
 // 21. thematic-break
 // 21. footer
 
-function toRNNode(node) {
+export function toRNNode(node) {
   switch (node.type) {
     case 'root':
       root(node)
@@ -72,10 +75,21 @@ function toRNNode(node) {
       strikethrough(node)
       break
 
-    case 'heading': {
+    case 'heading':
       heading(node)
-      return
-    }
+      break
+
+    case 'link':
+      link(node)
+      break
+
+    case 'break':
+      breakLine(node)
+      break
+
+    case 'blockquote':
+      blockquote(node)
+      break
 
     default:
       console.warn('Unsupported node type: ', node.type)
